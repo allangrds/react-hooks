@@ -17,7 +17,7 @@ function Greeting({initialName = ''}) {
   // 💰 window.localStorage.setItem('name', name)
   React.useEffect(() => {
     window.localStorage.setItem('name', name)
-  })
+  }, [name])
 
   function handleChange(event) {
     const name = event.target.value
