@@ -5,8 +5,10 @@
 import * as React from 'react'
 
 function useLocalStorageState(key, defaultValue = '') {
+  const valueFromLocalStorage = window.localStorage.getItem(key)
+
   const [state, setState] = React.useState(
-    () => window.localStorage.getItem(key) ?? defaultValue,
+    () => valueFromLocalStorage ?? defaultValue,
   )
 
   React.useEffect(() => {
